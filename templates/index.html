@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body class="bg-dark">
+    
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col"></div>
+
+            <div class="col">
+                
+                    <h1 class="p-2 text-light text-center">QR Code Generator</h1>
+                    <form class="form" action='/' method='POST'>
+                        <input class="form-control p-4" style="font-size: 18px;" type="text" placeholder="Enter your website link or any text to generate" name='string'>
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn btn-primary mt-3">Generate</button>
+                        </div>
+                    </form>
+
+                    
+                        {% if image_url %}
+                        <div class="d-flex justify-content-center">
+                            <img class="mt-3" src="{{ image_url }}" alt="QR Code" width="50%">
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <a href="{{ image_url }}" download>
+                                <button type="button" class="btn btn-danger mt-3">Download QR Code</button>
+                            </a>
+                        </div>
+                        {% endif %}
+                    
+            </div>
+
+            <div class="col"></div>
+        </div>
+
+        
+            <h6 class="text-secondary d-flex justify-content-center mt-5">Developed by Aakil Ahamed</h6>
+    </div>
+    
+        
+</body>
+</html>
